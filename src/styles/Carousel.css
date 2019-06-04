@@ -1,0 +1,14 @@
+.carousel {
+    width: 50vw;
+    height:50vh;
+    background:grey;
+}
+
+.carouselcaption{
+    color:black;
+}
+
+.carouselitem{
+    width:400px;
+    height:400px;
+}

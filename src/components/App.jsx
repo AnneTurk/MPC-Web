@@ -32,7 +32,6 @@ const App = () => {
       <NavBarFoot />
       </footer>
     </HashRouter>
-
   );
 };
 
