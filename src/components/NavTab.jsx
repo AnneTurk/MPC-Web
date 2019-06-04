@@ -1,11 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import styles from '../styles/NavTab.css';
+import '../styles/Navigation.css';
 
 const NavTab = props => {
 
   return (
-    <NavLink to={props.to}>
+    <NavLink to={props.to} className="navtext">
       {props.label}
     </NavLink>
   );
