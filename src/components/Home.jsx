@@ -3,7 +3,7 @@ import Welcome from "./Welcome"
 import ProductCarousel from "./Carousel"
 import ShopButton from "./Shopbutton"
 import "../styles/Carousel.css"
-
+import "../index.css"
 const Home = () => {
     return (
 <div>

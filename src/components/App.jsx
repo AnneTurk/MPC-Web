@@ -9,6 +9,7 @@ import Cart from "./Cart";
 import Contact from "./Contact"; 
 import About from "./About"; 
 import Error from "./Error.jsx";
+import "../index.css"
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
       <NavBarHead />
       </header>
       <body>
+      <br></br>
       <Switch>
       <Route exact path="/" component={Home}/> {/*-rubric13 + -rubric76 + -rubric69 */}
       <Route path="/shopping" component={Shopping} />{/*-rubric34 + -rubric70*/}
@@ -27,6 +29,7 @@ const App = () => {
       <Route path="/about" component={About} /> {/*-rubric64 = -rubric77*/}
       <Route component={Error} />
       </Switch>
+      <br></br>
       </body>
       <footer> {/*-rubric72*/}
       <NavBarFoot />

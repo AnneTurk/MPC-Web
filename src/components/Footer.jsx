@@ -1,7 +1,7 @@
 import React from "react";
 import NavTab from "./NavTab.jsx";
 import '../styles/Navigation.css';
-
+import "../index.css"
 const NavBarFoot = () => {
     return (
       <div className="footerbar">

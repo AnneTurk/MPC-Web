@@ -1,6 +1,6 @@
 import React from "react";
 import '../styles/shopping.css'
-
+import "../index.css"
 {/*rubric12*/}
 const ShopButton = () => {
     return (

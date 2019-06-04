@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel"
 import "../styles/Carousel.css"
-
+import "../index.css"
 const ProductCarousel = () => {
     return (
 <div>
