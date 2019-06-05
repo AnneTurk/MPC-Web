@@ -11,7 +11,6 @@ import About from "./About";
 import Error from "./Error.jsx";
 import "../index.css"
 
-
 const App = () => {
   return (
     <HashRouter basename="/">
@@ -23,7 +22,7 @@ const App = () => {
       <Switch>
       <Route exact path="/" component={Home}/> {/*-rubric13 + -rubric76 + -rubric69 */}
       <Route path="/shopping" component={Shopping} />{/*-rubric34 + -rubric70*/}
-      <Route path="/product" component={Product} />{/*-rubric46*/}
+      <Route path="/product/:id" component={Product} />{/*-rubric46*/}
       <Route path="/cart" component={Cart} /> {/*-rubric56 + -rubric71*/}
       <Route path="/contact" component={Contact} />{/*-rubric62 + -rubric78 */}
       <Route path="/about" component={About} /> {/*-rubric64 = -rubric77*/}
@@ -37,5 +36,6 @@ const App = () => {
     </HashRouter>
   );
 };
+
 
 export default App;
