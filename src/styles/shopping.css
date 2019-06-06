@@ -7,3 +7,16 @@ button{
 a{
     font-size: 3em;
 }
+
+.shopbody {
+    display: "flex";
+    height: 480px;
+    min-width: 960px;
+}
+
+.shopdetails {
+    width: 160px;
+    height: 480px;
+    background-color: "green";
+    text-align: "center";
+}
