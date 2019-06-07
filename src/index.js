@@ -8,12 +8,13 @@ import * as serviceWorker from './serviceWorker';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-//store.subscribe(() => {
-//    console.log(store.getState());
-//  });
+var store = createStore(reducer);
+store.subscribe(() => {
+   console.log(store.getState());
+  });
   
   ReactDOM.render(
-    <Provider /*store={store}*/>
+    <Provider store={store}>
       <App />
     </Provider>,
     document.getElementById("root")

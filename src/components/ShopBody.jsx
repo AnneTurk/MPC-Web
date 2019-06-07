@@ -1,15 +1,15 @@
 import React from "react";
 import DetailsContainer from "../containers/DetailsContainer.js";
-import Layout from "./Layout.jsx";
-import Menu from "./Menu.jsx";
+import ShopLayout from "./ShopLayout.jsx";
+import ShopMenu from "./ShopMenu.jsx";
 import "../styles/shopping.css"
 
-const Body = () => {e
+const Body = () => {
   return (
     <div className="shopbody">
       <DetailsContainer />
-      <Layout />
-      <Menu />
+      <ShopLayout />
+      <ShopMenu />
     </div>
   );
 };

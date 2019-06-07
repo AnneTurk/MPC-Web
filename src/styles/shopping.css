@@ -1,15 +1,15 @@
-button{
+/*button{
     width:20%;
     height:5%;
     margin:auto;
-}
+} */
 
 a{
     font-size: 3em;
 }
 
 .shopbody {
-    display: "flex";
+    display: flex;
     height: 480px;
     min-width: 960px;
 }
@@ -17,6 +17,47 @@ a{
 .shopdetails {
     width: 160px;
     height: 480px;
-    background-color: "green";
-    text-align: "center";
+    background-color: green;
+    text-align: center;
+}
+
+.shoplayout {
+    display: flex;
+    align-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 640px;
+    height: 480px;
+    background-color: orange;
+}
+
+.shopmenu {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    width: 160px;
+    height: 480px;
+    background-color: yellow;
+}
+
+.shoporderbutton{
+    width: 80px;
+    height: 80px;
+}
+
+.shoporderlist{
+    text-align: left;
+    margin-left: 20px;
+}
+
+.shopoverview{
+    width: 960px;
+    height: 160px;
+    background-color: red;
+    text-align: center;
+}
+.shoptablebutton{
+        width: 80px;
+        height: 80px;
+        margin: 25px;
 }
