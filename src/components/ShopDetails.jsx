@@ -1,9 +1,8 @@
 import React from "react";
 import OrderListContainer from "../containers/OrderListContainer.js";
 import ToggleTableContainer from "../containers/ToggleTableContainer.js";
-import "../styles/shopping.css"
 
-const ShopDetails = props => {
+const Details = props => {
 
   var total = 0;
   if (props.selectedTable !== null) {
@@ -22,4 +21,4 @@ const ShopDetails = props => {
   );
 };
 
-export default ShopDetails;
+export default Details;
