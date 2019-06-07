@@ -41,14 +41,11 @@ class Categories extends React.Component {
         return <div>Loading...</div>;
       } else {
         return (
-        <div>          
-        <ul>
-          {items.map(item => (
-            <li key={item.category}>
+        <div>         
+        {items.map(item => (
+            <h2 key={item.category}>
               {item.category}
-            </li>
-          ))}
-        </ul>
+            </h2>))}
         </div>
 
         );
