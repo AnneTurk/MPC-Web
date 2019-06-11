@@ -52,23 +52,22 @@ class CategoryMenu extends React.Component {
           return subcategories.map( ( subOption ) => {
             if ( !subOption.subcategories ) {
               return (
-                <div key={ subOption.subcategories }>
+                <div key={ subOption.name }>
                   <ListItem 
                     button 
-                    key={ subOption.category }>
+                    key={ subOption.name }>
                     <Link 
-                      to={ subOption.category }
-                      className="links" >
+                      to={ subOption.name } >
                       <ListItemText 
                         inset 
-                        primary= { subOption.category }
+                        primary= { subOption.name }
                       />
                     </Link>
                   </ListItem>
                 </div>
               )
             }
-            return (
+             return (
               <div key={ subOption.category }>
                 <ListItem 
                   button 
@@ -88,48 +87,7 @@ class CategoryMenu extends React.Component {
             )
           }) 
         }
-        handler( subcategories ) {
-          const { state } = this
 
-          return subcategories.map( ( subOption ) => {
-            if ( !subOption.subcategories ) {
-              return (
-                <div key={ subOption.category }>
-                  <ListItem 
-                    button 
-                    key={ subOption.category }>
-                    <Link 
-                      to={ subOption.category }
-                      className="links" >
-                      <ListItemText 
-                        inset 
-                        primary={ subOption.category } 
-                      />
-                    </Link>
-                  </ListItem>
-                </div>
-              )
-            }
-            return (
-              <div key={ subOption.category }>
-                <ListItem 
-                  button 
-                  onClick={ () => this.handleClick( subOption.category ) }>
-                  <ListItemText 
-                    inset 
-                    primary={ subOption.category } />
-                </ListItem>
-                <Collapse 
-                  in={ state[ subOption.category ] } 
-                  timeout="auto" 
-                  unmountOnExit
-                >
-                { this.handler( subOption.subcategories ) }
-                </Collapse>
-              </div>
-            )
-          }) 
-        }
     render() {
       const {  drawerOpen, menuOptions} = this.props;
       const { error, isLoaded, categories} = this.state;
