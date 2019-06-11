@@ -20,3 +20,15 @@ a{
     background-color: "green";
     text-align: "center";
 }
+
+.list {
+  width: 400px,
+}
+
+.links {
+  text-decoration:'none',
+}
+
+.menuHeader {
+  padding-left: 30px
+}

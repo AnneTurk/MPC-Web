@@ -7,7 +7,8 @@ class Products extends React.Component {
       this.state = {
         error: null,
         isLoaded: false,
-        items: []
+        categories: [],
+        subcategories: []
       };
     }
 
@@ -20,9 +21,10 @@ class Products extends React.Component {
           (result) => {
             this.setState({
               isLoaded: true,
-              items: result
+              categories: result,
+              subcategories: result.subcategories
             }); 
-            console.log(result)
+            console.log(result);
           },
           (error) => {
             this.setState({
@@ -34,27 +36,23 @@ class Products extends React.Component {
         )
         }
     render() {
-      const { error, isLoaded, items } = this.state;
+      const { error, isLoaded, categories} = this.state;
       if (error) {
         return <div>Error: {error.message}</div>;
       } else if (!isLoaded) {
         return <div>Loading...</div>;
       } else {
         return (
-        <div>          
-        <ul>
-          {items.map(item => (
-            <li key={item.category}>
-              {item.category}
-            </li>
-          ))}
-        </ul>
-        </div>
-
+        <div>
+          { categories.map(category => (
+            <h2 key={category.category}>{category.category}</h2>
+            ))}          
+        </div> 
         );
       }
     }
   }
+
 
 const Product = ({match}) => {
     return (

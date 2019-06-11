@@ -4,7 +4,7 @@ import NavBarHead from "./Header";
 import NavBarFoot from "./Footer";
 import Home from "./Home"; 
 import Shopping from "./Shopping"; 
-import Category from "./Category";
+import Category from "./CategoryMenu";
 import Product from "./Product"; 
 import Cart from "./Cart"; 
 import Contact from "./Contact"; 
