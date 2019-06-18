@@ -1,12 +1,14 @@
 import React from "react";
-import "../index.css"
-import "../styles/shopping.css"
+import "../index.css";
+import "../styles/shopping.css";
 import CategoryMenu from "./CategoryMenu";
+import CategoryOverview from "./CategoryOverview";
 
   const Shopping = () => {
       return (
-          <div>
-              <CategoryMenu className="col-3 categorymenu" />
+          <div className="flex-container">
+              <CategoryMenu />
+              <CategoryOverview />
           </div>
       )
   }

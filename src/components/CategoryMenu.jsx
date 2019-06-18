@@ -54,7 +54,7 @@ class CategoryMenu extends React.Component {
             if ( !subOption.subcategories ) {
               return (
                 <div key={ subOption.name }>
-                  <ListItem 
+                  <ListItem
                     button 
                     key={ subOption.name }>
                     <Link 
@@ -73,11 +73,11 @@ class CategoryMenu extends React.Component {
                 <ListItem 
                   button 
                   onClick={ () => this.handleClick( subOption.category ) }>
-                  <ListItemText 
+                  <ListItemText
                     inset 
                     primary={ subOption.category } />
                 </ListItem>
-                <Collapse 
+                <Collapse
                   in={ state[ subOption.category ] } 
                   timeout="auto" 
                   unmountOnExit
@@ -96,7 +96,7 @@ class CategoryMenu extends React.Component {
       } else if (!isLoaded) {
         return <div>Loading...</div>;
       } else {
-        return  <div className="list">
+        return  <div className="list col-3" id="categorymenu">
         <Drawer 
           variant="persistent" 
           anchor="left"
