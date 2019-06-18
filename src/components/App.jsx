@@ -15,10 +15,10 @@ import "../index.css"
 const App = () => {
   return (
     <HashRouter basename="/">
-      <header>{/* -rubric68 */}
-      <NavBarHead />
+      <header id="header">{/* -rubric68 */}
+      <NavBarHead className="col-12" />
       </header>
-      <body>
+      <body id="body">
       <br></br>
       <Switch>
       <Route exact path="/" component={Home}/> {/*-rubric13 + -rubric76 + -rubric69 */}
@@ -32,8 +32,8 @@ const App = () => {
       </Switch>
       <br></br>
       </body>
-      <footer> {/*-rubric72*/}
-      <NavBarFoot />
+      <footer id="footer"> {/*-rubric72*/}
+      <NavBarFoot className="col-12"/>
       </footer>
     </HashRouter>
   );

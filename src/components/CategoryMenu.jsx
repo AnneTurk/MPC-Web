@@ -6,6 +6,7 @@ import Collapse from '@material-ui/core/Collapse'
 import Drawer from '@material-ui/core/Drawer'
 import { Link } from 'react-router-dom'
 import '../styles/shopping.css'
+import { Paper } from '@material-ui/core';
 
 class CategoryMenu extends React.Component {
     constructor(props) {
@@ -57,7 +58,7 @@ class CategoryMenu extends React.Component {
                     button 
                     key={ subOption.name }>
                     <Link 
-                      to={ subOption.name } >
+                      to={subOption.name}> 
                       <ListItemText 
                         inset 
                         primary= { subOption.name }
@@ -89,7 +90,6 @@ class CategoryMenu extends React.Component {
         }
 
     render() {
-      const {  drawerOpen, menuOptions} = this.props;
       const { error, isLoaded, categories} = this.state;
       if (error) {
         return <div>Error: {error.message}</div>;
@@ -101,7 +101,6 @@ class CategoryMenu extends React.Component {
           variant="persistent" 
           anchor="left"
           open
-          className="list"
           >
           <div>
             <List>

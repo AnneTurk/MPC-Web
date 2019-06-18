@@ -22,13 +22,23 @@ a{
 }
 
 .list {
-  width: 400px,
+  width: 400px;
+  height: 400px;  
 }
 
-.links {
-  text-decoration:'none',
+#categorymenu {
+  top: 0;
+  flex: 1 0 auto;
+  height: 100%;
+  display: flex;
+  outline: none;
+  z-index: 1200;
+  position: static;
+  overflow-y: auto;
+  flex-direction: column;
 }
 
 .menuHeader {
-  padding-left: 30px
+  padding-left: 30px;
 }
+
