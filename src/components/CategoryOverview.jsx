@@ -1,9 +1,8 @@
 import React from "react";
 import "../styles/shopping.css";
 import "../index.css";
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
+import {Link} from 'react-router-dom';
+import {fetchData} from '../actions/requestProducts'
 
 class CategoryOverview extends React.Component {
     constructor(props) {
@@ -36,24 +35,18 @@ class CategoryOverview extends React.Component {
           }
         )
     };
-    handler( subcategories ) {
-        const { state } = this
-
-        return subcategories.map( ( subOption ) => {
-            return (
-              <div key={ subOption.name }>
-                <Grid item xs={12}>
-                <ButtonGroup 
-                  key={ subOption.name }>
-                  <Button>
-                        {subOption.category} 
-                  </Button>
-                </ButtonGroup>
-                </Grid>
-              </div>
-            )
-          })
-        };
+        handler( categories ) {
+          const { state } = this
+          return categories.map( ( subOption ) => {
+              return (
+                <div key={ subOption.category } >
+                  <button >
+                  <Link to="/product?name=productname" key={subOption.category}>{subOption.category}</Link>
+                  </button>
+                </div>
+              )
+            })
+          };      
     render(){
         const {categories} = this.state;
         return ( 

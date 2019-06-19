@@ -6,9 +6,9 @@ import "../index.css"
 const NavBarHead = () => {
   return (
     <div className="headerbar">
-          <NavTab to="/" label="Home" className="navStyle"></NavTab> {/* -rubric65 */}  &nbsp;
-          <NavTab to="/shopping" label="Shopping"></NavTab> {/* -rubric66 */}&nbsp;
-          <NavTab to="/cart" label="Cart"></NavTab> {/* -rubric67 */}&nbsp;
+          <NavTab to="/" icon="home" class="navtext firstelement"></NavTab> {/* -rubric65 */}  &nbsp;
+          <NavTab to="/shopping"  icon="shopping-basket" class="navtext middle"></NavTab> {/* -rubric66 */}&nbsp;
+          <NavTab to="/cart" label="" icon="shopping-cart" class="navtext lastelement"></NavTab> {/* -rubric67 */}&nbsp;
       </div>
   );
 };

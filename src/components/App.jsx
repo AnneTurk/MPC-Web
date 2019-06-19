@@ -1,5 +1,6 @@
 import React from "react";
-import { HashRouter, Switch, Redirect, Route } from "react-router-dom";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Switch, Redirect, Route } from "react-router-dom";
 import NavBarHead from "./Header";
 import NavBarFoot from "./Footer";
 import Home from "./Home"; 
@@ -10,11 +11,16 @@ import Cart from "./Cart";
 import Contact from "./Contact"; 
 import About from "./About"; 
 import Error from "./Error.jsx";
+import {library} from "@fortawesome/fontawesome-svg-core";
+import {fab} from "@fortawesome/free-brands-svg-icons";
+import {fas} from "@fortawesome/free-solid-svg-icons"
 import "../index.css"
+
+library.add(fab, fas);
 
 const App = () => {
   return (
-    <HashRouter basename="/">
+    <BrowserRouter basename="/#">
       <header id="header">{/* -rubric68 */}
       <NavBarHead className="col-12" />
       </header>
@@ -23,8 +29,8 @@ const App = () => {
       <Switch>
       <Route exact path="/" component={Home}/> {/*-rubric13 + -rubric76 + -rubric69 */}
       <Route exact path="/shopping" component={Shopping} />{/*-rubric34 + -rubric70*/}
-      <Route path="/shopping/:id" component={Category} />
-      <Route path="/product/:id" component={Product} />{/*-rubric46*/}
+      <Route path="/shopping" component={Category} />
+      <Route path="/product" component={Product} />{/*-rubric46*/}
       <Route path="/cart" component={Cart} /> {/*-rubric56 + -rubric71*/}
       <Route path="/contact" component={Contact} />{/*-rubric62 + -rubric78 */}
       <Route path="/about" component={About} /> {/*-rubric64 = -rubric77*/}
@@ -35,7 +41,7 @@ const App = () => {
       <footer id="footer"> {/*-rubric72*/}
       <NavBarFoot className="col-12"/>
       </footer>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

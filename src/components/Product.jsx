@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom"
 import "../index.css";
 
 class Products extends React.Component {
@@ -34,6 +35,7 @@ class Products extends React.Component {
             console.log(error)
           }
         )
+        console.log(this)
         }
     render() {
       const { error, isLoaded, categories} = this.state;

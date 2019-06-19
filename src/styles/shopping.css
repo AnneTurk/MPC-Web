@@ -44,4 +44,5 @@ a{
 
 .overview {
   margin-left:auto;
+  display:flex;
 }

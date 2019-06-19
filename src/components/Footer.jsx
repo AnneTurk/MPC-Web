@@ -5,9 +5,9 @@ import "../index.css"
 const NavBarFoot = () => {
     return (
       <div className="footerbar">
-            <NavTab to="/" label="Home" className="navStyle"></NavTab> {/*-rubric73*/} &nbsp;
-            <NavTab to="/contact" label="Contact"></NavTab> {/*-rubric74*/}&nbsp;
-            <NavTab to="/about" label="About"></NavTab> {/*-rubric75*/}&nbsp;
+            <NavTab to="/" icon="home" class="navtext firstelement" ></NavTab> {/*-rubric73*/} &nbsp;
+            <NavTab to="/contact" label="Contact" class="navtext middle"></NavTab> {/*-rubric74*/}&nbsp;
+            <NavTab to="/about" label="About" class="navtext lastelement"></NavTab> {/*-rubric75*/}&nbsp;
         </div>
     );
   };
