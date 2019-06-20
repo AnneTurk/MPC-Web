@@ -56,10 +56,10 @@ class Products extends React.Component {
   }
 
 
-const Product = ({match}) => {
+const Product = () => {
     return (
         <div>
-            <h1>Product: {match.params.id}</h1>
+            <h1>Product: </h1><p id="category"/>
             <Products />
         </div>
     );

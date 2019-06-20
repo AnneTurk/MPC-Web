@@ -5,6 +5,7 @@ import ShopButton from "./ShopButton"
 import "../styles/Carousel.css"
 import "../index.css"
 const Home = () => {
+    
     return (
 <div>
  <Welcome />  {/*rubric04 */} 

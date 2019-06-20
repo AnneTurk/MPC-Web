@@ -1,24 +1,37 @@
-function fetchData () {
-fetch("https://webmppcapstone.blob.core.windows.net/data/itemsdata.json",{
-        method: 'GET'
-      })
-        .then(res => res.json())
-        .then(
-          (result) => {
-            this.setState({
-              isLoaded: true,
-              categories: result,
-            }); 
-            console.log(result);
-          },
-          (error) => {
-            this.setState({
-              isLoaded: true,
-              error
-            });
-            console.log(error)
-          }
-        )
-        return categories;
-        }
-export default fetchData;
+import $ from "jquery";
+
+var data = [
+    {
+        "category": "",
+        "subcategories":[
+            {
+                "name":"",
+                "items": [
+                    {
+                        "name":"",
+                        "description":"",
+                        "price":"",
+                        "imagelink":"",
+                        "rating": "",
+                        "stock": "",
+                        "category": "",
+                        "subcategory": ""
+                    }
+                ]
+            }
+        ]
+    }
+]
+$(function (){
+    $("#app").ready(
+        $.getJSON(
+            "https://webmppcapstone.blob.core.windows.net/data/itemsdata.json",
+            function(data){
+                $("#category").val(data.category);
+                $("#subcategories").val(data.subcatgories)
+                console.log(data)
+            }
+        ) 
+    )
+})
+

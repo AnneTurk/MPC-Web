@@ -2,7 +2,6 @@ import React from "react";
 import "../styles/shopping.css";
 import "../index.css";
 import {Link} from 'react-router-dom';
-import {fetchData} from '../actions/requestProducts'
 
 class CategoryOverview extends React.Component {
     constructor(props) {

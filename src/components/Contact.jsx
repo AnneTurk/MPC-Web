@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import "../styles/contact.css"
 import "../index.css"
 
 {/*rubric61 */}
@@ -33,15 +35,16 @@ import "../index.css"
 
 const Contact = () => {
     return (
-        <div>
-        <h1>Contact</h1>
-        <section>
-            <form name="contactForm"> {/*rubric57 */}
-                <label>Name:</label><br></br>
-                <input type="text" name="name" id="nameinput" placeholder="John Doe" ></input><br></br>
-                <label>Email:</label><br></br>
-                <input type="email" name="emailaddress" id="emailinput" placeholder="johndoe@email.com"></input><br></br>
-                <label>Subject:</label><br></br>
+        <div className="contact">
+        <section className="form col-6">
+            <form name="contactForm" id="contactform"> {/*rubric57 */}
+            <h1>Contact</h1>
+            <br/>
+                <label>Name:</label><br/>
+                <input type="text" name="name" id="nameinput" placeholder="John Doe" ></input><br/><br/>
+                <label>Email:</label><br/>
+                <input type="email" name="emailaddress" id="emailinput" placeholder="johndoe@email.com"></input><br/><br/>
+                <label>Subject:</label><br/>
                 <select name="subject">
                     <option value=""></option>
                     <option value="compliment">Compliment</option>
@@ -50,23 +53,23 @@ const Contact = () => {
                     <option value="information">General information</option>
                     <option value="question">Question(s)</option>
                     <option value="other">Other</option>
-                </select><br></br>
-                <label>Message:</label><br></br>
+                </select><br/><br/>
+                <label>Message:</label><br/>
                 <textarea name="message" placeholder="Type here de message"></textarea>
-                <br></br>
-                <br></br>
+                <br/>
+                <br/>
                 <input type="submit" value="Send" className="button" id="sendButton" onClick={validateForm}></input>
             </form>
         </section>
-        <section>
-            <h1>Contact information</h1>
+        <section className="info col-6"> 
             <div>
-            <h2>WorldWideImporters</h2>
-            <p>Evert van de Beekstraat 354</p>
-            <p>1118 CZ Schiphol</p>
-            <p>The Netherlands</p>
+            <h1>Contact information</h1><br/>
+            <h2>WorldWideImporters</h2><br />
+            <p>&nbsp;&nbsp;&nbsp;Evert van de Beekstraat 354</p>
+            <p>&nbsp;&nbsp;&nbsp;1118 CZ Schiphol</p>
+            <p>&nbsp;&nbsp;&nbsp;The Netherlands</p>
             <div>
-                <p>020 500 1500</p>
+              <FontAwesomeIcon icon="phone"/>  <p>020 500 1500</p>
                 <p>info@WWI.nl</p>
             </div>
             </div>

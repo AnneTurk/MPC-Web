@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App.jsx';
 import * as serviceWorker from './serviceWorker';
+import $ from "jquery";
+import '../src/actions/requestProducts'
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 
   ReactDOM.render(
-      <App />,
+      <App id="app"/>,
     document.getElementById("root")
   );
 
