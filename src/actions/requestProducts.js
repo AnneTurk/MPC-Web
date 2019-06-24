@@ -30,6 +30,7 @@ $(function (){
                 $("#category").val(data.category);
                 $("#subcategories").val(data.subcatgories)
                 console.log(data)
+                console.log(data.category)
             }
         ) 
     )

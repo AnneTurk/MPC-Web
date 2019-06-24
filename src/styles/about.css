@@ -1,0 +1,11 @@
+.globe{
+ height: 1.5rem;
+ display: flex;
+
+}
+
+.abouttext{
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}

@@ -69,8 +69,8 @@ const Contact = () => {
             <p>&nbsp;&nbsp;&nbsp;1118 CZ Schiphol</p>
             <p>&nbsp;&nbsp;&nbsp;The Netherlands</p>
             <div>
-              <FontAwesomeIcon icon="phone"/>  <p>020 500 1500</p>
-                <p>info@WWI.nl</p>
+              <p>&nbsp;<FontAwesomeIcon icon="phone"/>&nbsp;<label>020 500 1500</label></p>
+              <p>&nbsp;<FontAwesomeIcon icon="at"/>&nbsp;<label>info@WWI.nl</label></p>
             </div>
             </div>
         </section>
