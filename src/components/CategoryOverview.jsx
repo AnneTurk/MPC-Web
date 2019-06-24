@@ -2,8 +2,21 @@ import React from "react";
 import "../styles/shopping.css";
 import "../index.css";
 import {Link} from 'react-router-dom';
+import FooterCategories from './FooterCategories'
+import AddCategory from '../containers/AddCategory'
+import VisibleCategoryList from '../containers/VisibleCategoryList'
 
-class CategoryOverview extends React.Component {
+const CategoryOverview = () => (
+  <div>
+    <AddCategory />
+    <VisibleCategoryList />
+    <FooterCategories />
+  </div>
+)
+
+export default CategoryOverview
+
+/*class CategoryOverview extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -54,6 +67,6 @@ class CategoryOverview extends React.Component {
             </div>
     );
   }
-};
+}; 
   
-export default (CategoryOverview);
+export default (CategoryOverview);*/

@@ -1,5 +1,3 @@
-import $ from "jquery";
-
 var data = [
     {
         "category": "",
@@ -22,17 +20,4 @@ var data = [
         ]
     }
 ]
-$(function (){
-    $("#app").ready(
-        $.getJSON(
-            "https://webmppcapstone.blob.core.windows.net/data/itemsdata.json",
-            function(data){
-                $("#category").val(data.category);
-                $("#subcategories").val(data.subcatgories)
-                console.log(data)
-                console.log(data.category)
-            }
-        ) 
-    )
-})
 

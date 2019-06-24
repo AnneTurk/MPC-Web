@@ -1,16 +1,20 @@
+import 'babel-polyfill'
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './components/App.jsx';
 import * as serviceWorker from './serviceWorker';
-import $ from "jquery";
-import '../src/actions/requestProducts'
+import {render} from 'react-dom';
+import { createStore } from "redux";
+import webshop from './reducers';
+import Root from './components/Root';
+import '../src/actions/requestProducts';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
+const store = createStore(webshop)
 
-  ReactDOM.render(
-      <App id="app"/>,
-    document.getElementById("root")
+render(
+  <Root store={store} />
+    ,document.getElementById("root")
   );
 
 // If you want your app to work offline and load faster, you can change

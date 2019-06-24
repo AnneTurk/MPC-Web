@@ -43,8 +43,10 @@ class CategoryMenu extends React.Component {
         handleClick( categories ) {
           console.log(categories)
           this.setState( prevState => ( 
-            { [ categories ]: !prevState[ categories ] } 
+            { [ categories ]: !prevState[ categories ],
+            selectedCategory: categories } 
           ) )
+          console.log(this.state)
         };
         
         handler( subcategories ) {

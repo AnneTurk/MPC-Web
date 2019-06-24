@@ -11,10 +11,11 @@ import Cart from "./Cart";
 import Contact from "./Contact"; 
 import About from "./About"; 
 import Error from "./Error.jsx";
+import Data from "./Data";
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {fab} from "@fortawesome/free-brands-svg-icons";
-import {fas} from "@fortawesome/free-solid-svg-icons"
-import "../index.css"
+import {fas} from "@fortawesome/free-solid-svg-icons";
+import "../index.css";
 
 library.add(fab, fas);
 
