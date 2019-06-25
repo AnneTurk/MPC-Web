@@ -4,16 +4,18 @@ import App from './components/App.jsx';
 import * as serviceWorker from './serviceWorker';
 import {render} from 'react-dom';
 import { createStore } from "redux";
-import webshop from './reducers';
+import rootReducer from './reducers';
 import Root from './components/Root';
 import '../src/actions/requestProducts';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const store = createStore(webshop)
+const store = createStore(rootReducer, window.STATE_FROM_SERVER)
+
+console.log(store.getState())
 
 render(
-  <Root store={store} />
+  <App store={store} />
     ,document.getElementById("root")
   );
 

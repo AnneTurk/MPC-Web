@@ -2,7 +2,8 @@ import React from "react";
 import "../index.css";
 import "../styles/shopping.css";
 import CategoryMenu from "./CategoryMenu";
-import CategoryOverview from "./CategoryOverview";
+import SortBar from './SortBar';
+
 const SUBCATEGORIES = [
     {
         category: "Household and Beauty",
@@ -38,13 +39,16 @@ const SUBCATEGORIES = [
                 }]
               }];
 
-  const Shopping = () => {
+  const CategoryPage = () => {
       return (
-          <div className="flex-container">
-              <CategoryMenu />
-              <CategoryOverview subcategories={SUBCATEGORIES}/>
+          <div>
+            <div className="flex-container">
+              <CategoryMenu /> 
           </div>
+            <SortBar />
+          </div>
+
       )
   }
 
-  export default Shopping
+  export default CategoryPage

@@ -5,13 +5,13 @@ import NavBarHead from "./Header";
 import NavBarFoot from "./Footer";
 import Home from "./Home"; 
 import Shopping from "./Shopping"; 
+import CategoryPage from "./CategoryPage";
 import Category from "./CategoryMenu";
 import Product from "./Product"; 
 import Cart from "./Cart"; 
 import Contact from "./Contact"; 
 import About from "./About"; 
 import Error from "./Error.jsx";
-import Data from "./Data";
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {fab} from "@fortawesome/free-brands-svg-icons";
 import {fas} from "@fortawesome/free-solid-svg-icons";
@@ -31,6 +31,7 @@ const App = () => {
       <Route exact path="/" component={Home}/> {/*-rubric13 + -rubric76 + -rubric69 */}
       <Route exact path="/shopping" component={Shopping} />{/*-rubric34 + -rubric70*/}
       <Route path="/shopping" component={Category} />
+      <Route path="/shopping/:category" component={CategoryPage} />
       <Route path="/product" component={Product} />{/*-rubric46*/}
       <Route path="/cart" component={Cart} /> {/*-rubric56 + -rubric71*/}
       <Route path="/contact" component={Contact} />{/*-rubric62 + -rubric78 */}

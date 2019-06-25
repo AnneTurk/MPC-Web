@@ -4,9 +4,9 @@ import {
   INVALIDATE_CATEGORY,
   REQUEST_ITEMS,
   RECEIVE_ITEMS
-} from './actions'
+} from '../actions/index'
 
-function selectedCategory(state = 'reactjs', action) {
+function selectedCategory(state = '', action) {
   switch (action.type) {
     case SELECT_CATEGORY:
       return action.category
@@ -45,7 +45,7 @@ function items(
   }
 }
 
-function postsByCategory(state = {}, action) {
+function itemsByCategory(state = {}, action) {
   switch (action.type) {
     case INVALIDATE_CATEGORY:
     case RECEIVE_ITEMS:
@@ -59,7 +59,7 @@ function postsByCategory(state = {}, action) {
 }
 
 const rootReducer = combineReducers({
-  postsByCategory: postsByCategory,
+  itemsByCategory: itemsByCategory,
   selectedCategory: selectedCategory
 })
 

@@ -1,5 +1,7 @@
+import React from "react";
+import "../index.css"
 
-const Product = () => {
+const Products = () => {
     return (
         <div>
             <h1>Product: </h1><p id="category"/>
@@ -8,4 +10,4 @@ const Product = () => {
     );
   };
   
-export default Product;
+export default Products;

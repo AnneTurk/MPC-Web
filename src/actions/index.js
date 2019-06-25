@@ -1,9 +1,9 @@
 import fetch from 'cross-fetch'
 
-export const REQUEST_ITEMS
-export const RECEIVE_ITEMS
-export const SELECT_CATEGORY
-export const INVALIDATE_CATEGORY
+export const INVALIDATE_CATEGORY = 'INVALIDATE-CATEGORY'
+export const SELECT_CATEGORY = 'SELECT_CATEGORY'
+export const RECEIVE_ITEMS = 'RECEIVE_ITEMS'
+export const REQUEST_ITEMS = 'REQUEST_ITEMS'
 
 export function selectCategory(category) {
   return {
@@ -27,10 +27,11 @@ export function invalidateCategory(category) {
 }
 
 function receiveItems(category, json) {
+  console.log()
   return {
     type: RECEIVE_ITEMS,
     category,
-    posts: json.data.children.map(child => child.data),
+    items: json.data.children.map(child => child.data),
     receivedAt: Date.now()
   }
 }
@@ -43,6 +44,7 @@ function fetchItems(category) {
       .then(json => dispatch(receiveItems(category, json)))
   }
 }
+
 
 function shouldFetchItems(state, category) {
   const items = state.itemsByCategory[category]

@@ -6,7 +6,6 @@ import Collapse from '@material-ui/core/Collapse'
 import Drawer from '@material-ui/core/Drawer'
 import { Link } from 'react-router-dom'
 import '../styles/shopping.css'
-import { Paper } from '@material-ui/core';
 
 class CategoryMenu extends React.Component {
     constructor(props) {

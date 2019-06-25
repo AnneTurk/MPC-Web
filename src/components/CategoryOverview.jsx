@@ -2,71 +2,21 @@ import React from "react";
 import "../styles/shopping.css";
 import "../index.css";
 import {Link} from 'react-router-dom';
-import FooterCategories from './FooterCategories'
-import AddCategory from '../containers/AddCategory'
-import VisibleCategoryList from '../containers/VisibleCategoryList'
+import SubcategoryButton from './SubcategoryButton';
+import '../actions/requestProducts.json'
 
-const CategoryOverview = () => (
-  <div>
-    <AddCategory />
-    <VisibleCategoryList />
-    <FooterCategories />
-  </div>
-)
-
-export default CategoryOverview
-
-/*class CategoryOverview extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        error: null,
-        isLoaded: false,
-        categories: [],
-      };
-    }
-    componentDidMount() {
-    fetch("https://webmppcapstone.blob.core.windows.net/data/itemsdata.json",{
-        method: 'GET'
-      })
-        .then(res => res.json())
-        .then(
-          (result) => {
-            this.setState({
-              isLoaded: true,
-              categories: result,
-            }); 
-            console.log(result);
-          },
-          (error) => {
-            this.setState({
-              isLoaded: true,
-              error
-            });
-            console.log(error)
-          }
-        )
-    };
-        handler( categories ) {
-          const { state } = this
-          return categories.map( ( subOption ) => {
-              return (
-                <div key={ subOption.category } >
-                  <button >
-                  <Link to="/product?name=productname" key={subOption.category}>{subOption.category}</Link>
-                  </button>
-                </div>
-              )
-            })
-          };      
+class CategoryOverview extends React.Component {
     render(){
-        const {categories} = this.state;
+      const rows = [];
+      this.props.subcategories.forEach((subcategory)=> {
+        rows.push(<SubcategoryButton subcategory={subcategory}/>)
+      })
         return ( 
             <div className="col-9 overview ">
-                {this.handler(categories)}
+              <SubcategoryButton subcategories={this.props.subcategories} />
             </div>
     );
   }
 }; 
   
-export default (CategoryOverview);*/
+export default (CategoryOverview);
