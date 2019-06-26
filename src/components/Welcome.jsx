@@ -6,7 +6,7 @@ import "../index.css"
 const Welcome = () => {
     return (
 <div>
-<h1>Hallo world</h1>
+<h1>Welcome to the new Webshop from WorldWideImporters</h1>
 <br></br>
 </div>
     );

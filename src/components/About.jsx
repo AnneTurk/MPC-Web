@@ -8,7 +8,7 @@ const About = () => {
         <div>
             <h1>About</h1>
             <br></br>
-            <div className="flex-container"> 
+            <div className="-row"> 
             <FontAwesomeIcon icon="globe" className="globe"/><p className="abouttext"><span className="brand">WorldWideImporters</span> is a Dutch family owned company that imports and exports products from all over the world. To let everybody profit from their world wide network to give you everything you wish for just a mouseclick away. </p>
             </div>
         </div>

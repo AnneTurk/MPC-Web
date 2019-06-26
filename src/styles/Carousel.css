@@ -75,14 +75,19 @@
     color:black;
 }
 
-.carouselitem{
-    width:60vw;
-    height:60vh;
+.carousel-item{
+    height:50%;
 }
-
+.caption, .text{
+  color:black;
+}
 img {
     display: block;
     margin: auto;
-    width: 50%;
-    height:auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    height: 100%;
+    min-height:70vh;
+    width: auto;
+    max-width: 80vw;
   }

@@ -41,11 +41,14 @@ const SUBCATEGORIES = [
 
   const CategoryPage = () => {
       return (
-          <div>
-            <div className="flex-container">
+          <div className="flex-container-row">
+            <div>
               <CategoryMenu /> 
           </div>
+          <div className="flex-container-column">
             <SortBar />
+            </div>
+
           </div>
 
       )

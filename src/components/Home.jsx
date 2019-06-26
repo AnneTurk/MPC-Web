@@ -1,6 +1,6 @@
 import React from "react";
 import Welcome from "./Welcome"
-import ProductCarousel from "./Carousel"
+import { ProductCarousel } from "./Carousel"
 import ShopButton from "./ShopButton"
 import "../styles/Carousel.css"
 import "../index.css"

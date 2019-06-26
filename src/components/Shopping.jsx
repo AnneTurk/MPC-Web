@@ -1,8 +1,10 @@
 import React from "react";
+import { connect } from 'react-redux';
 import "../index.css";
 import "../styles/shopping.css";
 import CategoryMenu from "./CategoryMenu";
 import CategoryOverview from "./CategoryOverview";
+
 const SUBCATEGORIES = [
     {
         category: "Household and Beauty",
@@ -40,11 +42,11 @@ const SUBCATEGORIES = [
 
   const Shopping = () => {
       return (
-          <div className="flex-container">
+          <div className="flex-container-row">
               <CategoryMenu />
-              <CategoryOverview subcategories={SUBCATEGORIES}/>
+              <CategoryOverview/>
           </div>
       )
-  }
+  };
 
   export default Shopping

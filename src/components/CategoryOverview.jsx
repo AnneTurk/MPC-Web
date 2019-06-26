@@ -1,22 +1,25 @@
 import React from "react";
 import "../styles/shopping.css";
 import "../index.css";
-import {Link} from 'react-router-dom';
 import SubcategoryButton from './SubcategoryButton';
-import '../actions/requestProducts.json'
+import { selectSubcategory } from '../actions/index'
+import { connect } from "react-redux";
 
-class CategoryOverview extends React.Component {
-    render(){
-      const rows = [];
-      this.props.subcategories.forEach((subcategory)=> {
-        rows.push(<SubcategoryButton subcategory={subcategory}/>)
-      })
-        return ( 
-            <div className="col-9 overview ">
-              <SubcategoryButton subcategories={this.props.subcategories} />
-            </div>
-    );
+const mapStateToProps = state => {
+  return{
+    items: state.items
   }
-}; 
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onSelect: id => {
+      dispatch(selectSubcategory(id));
+    }
+  };
+};
+
+const CategoryOverview = connect(mapStateToProps, mapDispatchToProps)(SubcategoryButton);
+
   
 export default (CategoryOverview);

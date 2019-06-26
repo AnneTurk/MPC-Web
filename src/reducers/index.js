@@ -1,66 +1,76 @@
 import { combineReducers } from 'redux'
 import {
-  SELECT_CATEGORY,
-  INVALIDATE_CATEGORY,
-  REQUEST_ITEMS,
-  RECEIVE_ITEMS
+  REQUEST_ITEMS, 
+  RECEIVE_ITEMS,
+  SELECT_ITEM,
+  SELECT_SUBCATEGORY,
+  ADD_PRODUCT,
+  DELETE_PRODUCT,
+  INCREMENT_MONEY_CART
 } from '../actions/index'
 
-function selectedCategory(state = '', action) {
+var initialState = {
+  items: [],
+  subcategories : [],
+  products: [],
+  cart:[]
+}
+
+export const itemReducer = (state = [], action) => {
   switch (action.type) {
-    case SELECT_CATEGORY:
-      return action.category
-    default:
-      return state
+    case "REQUEST_ITEMS":
+      return state;
+    case "RECEIVE_ITEMS":
+      return {
+        ...state,
+        items: action.items
+      };
+    case "SELECT_ITEM":
+      if (state === action.id) return null;
+        else return action.id;
+    default: 
+      return state;
+  }
+}
+export const subcategoryReducer = (state = [], action) => {
+  switch (action.type) {
+    case "SELECT_SUBCATEGORY":
+      if (state === action.id) return [];
+      else return action.id
+    default: 
+    return state;
   }
 }
 
-function items(
-  state = {
-    isFetching: false,
-    didInvalidate: false,
-    items: []
-  },
-  action
-) {
+export const cartReducer = (state = [], action) => {
   switch (action.type) {
-    case INVALIDATE_CATEGORY:
-      return Object.assign({}, state, {
-        didInvalidate: true
-      })
-    case REQUEST_ITEMS:
-      return Object.assign({}, state, {
-        isFetching: true,
-        didInvalidate: false
-      })
-    case RECEIVE_ITEMS:
-      return Object.assign({}, state, {
-        isFetching: false,
-        didInvalidate: false,
-        items: action.items,
-        lastUpdated: action.receivedAt
-      })
-    default:
-      return state
+    case "ADD_PRODUCT":
+      var stateCopy = [];
+      stateCopy[action.cart].push(action.product);
+      return stateCopy;
+    case "DELETE_PRODUCT":
+      var stateCopy = [];
+      stateCopy[action.cart].splice(action.product, 1);
+      return stateCopy
+    default: 
+    return state;
   }
 }
 
-function itemsByCategory(state = {}, action) {
+export const totalAmount = (state = 0, action) => {
   switch (action.type) {
-    case INVALIDATE_CATEGORY:
-    case RECEIVE_ITEMS:
-    case REQUEST_ITEMS:
-      return Object.assign({}, state, {
-        [action.category]: items(state[action.category], action)
-      })
+    case 'INCREMENT_MONEY_CART':
+      return state + action.amount;
     default:
-      return state
+      return state;
   }
-}
+};
 
 const rootReducer = combineReducers({
-  itemsByCategory: itemsByCategory,
-  selectedCategory: selectedCategory
+  itemReducer,
+  subcategoryReducer,
+  cartReducer,
+  totalAmount
 })
 
 export default rootReducer
