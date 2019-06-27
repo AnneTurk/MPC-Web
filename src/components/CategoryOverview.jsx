@@ -5,6 +5,7 @@ import "../index.css";
 // import { selectSubcategory } from '../actions/index'
 import { connect } from "react-redux";
 import { fetchItems } from '../actions';
+import SubcategoryButton from "./SubcategoryButton";
 
 const mapStateToProps = state => {
   console.log(state)
@@ -34,7 +35,7 @@ class CategoryOverview extends React.Component {
       <div style={{ display: 'flex', flexDirection: 'column'}}>
           {
             this.props.items.map(item => {
-              return <span>{item.category}</span>
+              return <button type='button' name="category" className="button">{item.category}</button>
             })
           }
       </div>

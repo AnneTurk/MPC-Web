@@ -7,7 +7,6 @@ class SubcategoryButton extends React.Component {
         return(
         <div>
             <button type="button" name="category" className="button">
-               {this.props.category} 
             </button>
         </div>
         );
