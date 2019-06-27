@@ -18,7 +18,7 @@ export function fetchItems() {
     .then(handleErrors)
       .then(response => response.json())
       .then(json => {
-        dispatch(fetchItemsSuccess(json.items));
+        dispatch(fetchItemsSuccess(json));
         console.log(json)
       return json.items})
       .catch(error => dispatch(fetchItemsFailure(error)));

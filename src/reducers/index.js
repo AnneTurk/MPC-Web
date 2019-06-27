@@ -97,7 +97,7 @@ export const totalAmount = (state = 0, action) => {
 };
 
 const rootReducer = combineReducers({
-  itemReducer1,
+  items: itemReducer1,
   /*itemReducer,
   subcategoryReducer,
   cartReducer,
