@@ -1,11 +1,9 @@
 import React from "react";
 import "../styles/shopping.css";
 import "../index.css";
-// import SubcategoryButton from './SubcategoryButton';
-// import { selectSubcategory } from '../actions/index'
 import { connect } from "react-redux";
-import { fetchItems } from '../actions';
-import SubcategoryButton from "./SubcategoryButton";
+import { fetchItems} from '../actions';
+import {NavLink} from "react-router-dom";
 
 const mapStateToProps = state => {
   console.log(state)
@@ -32,10 +30,10 @@ class CategoryOverview extends React.Component {
       return <span>Items are loading...</span>
     }
     return (
-      <div style={{ display: 'flex', flexDirection: 'column'}}>
+      <div className="flex-container-row col-9">
           {
             this.props.items.map(item => {
-              return <button type='button' name="category" className="button">{item.category}</button>
+              return <NavLink to="/shopping/:category" className="button">{item.category}</NavLink>
             })
           }
       </div>

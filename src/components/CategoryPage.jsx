@@ -1,46 +1,42 @@
 import React from "react";
-import "../index.css";
 import "../styles/shopping.css";
+import "../index.css";
+import { connect } from "react-redux";
+import { fetchItems } from '../actions';
 import CategoryMenu from "./CategoryMenu";
 import SortBar from './SortBar';
 
-const SUBCATEGORIES = [
-    {
-        category: "Household and Beauty",
-        subcategories: [
-            {
-                name: "Baby Care",
-                items: [
-                    {
-                        name: "Bib",
-                        description: "Baby Bib helps with keeps baby cloth clean during meal time",
-                        price: 10.00,
-                        imagelink: "https://webmppcapstone.blob.core.windows.net/babycare-royaltyfree/babybib.png",
-                        rating: "4",
-                        stock: "30",
-                        category: "Household and Beauty",
-                        subcategory: "Baby care"
-                    }]
-                  },
-            {
-                name: "Drug Store",
-                items: [
-                          {
-                            name: "Bandage",
-                            description: "Flexible Fabric, 100-Count Boxes",
-                            price: 5.00,
-                            imagelink: "https://webmppcapstone.blob.core.windows.net/drugs-royaltyfree/bandage.png",
-                            rating: "4",
-                            stock: "58",
-                            category: "Household and Beauty",
-                            subcategory: "Drug Store"
-                          }
-                  ]
-                }]
-              }];
+const mapStateToProps = state => {
+  console.log(state)
+  return{
+    items: state.items.items,
+  }
+}
 
-  const CategoryPage = () => {
-      return (
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchItems: () => dispatch(fetchItems())
+    }
+  };
+
+
+export class CategoryPage extends React.Component {
+
+  componentDidMount() {
+    this.props.fetchItems();
+  }
+
+  render() {
+    if (!this.props.items) {
+      return <span>Items are loading...</span>
+    }
+    return (
+      <div className="flex-container-row">
+          {
+            this.props.items.map(item => {
+              return <button type='button' name="category" className="button">{item.category}</button>
+            })
+          }
           <div className="flex-container-row">
             <div>
               <CategoryMenu /> 
@@ -50,8 +46,9 @@ const SUBCATEGORIES = [
             </div>
 
           </div>
-
-      )
+      </div>
+    )
   }
+};
 
-  export default CategoryPage
+export default connect(mapStateToProps, /*mapDispatchToProps*/)(CategoryPage);
