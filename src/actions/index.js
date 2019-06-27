@@ -3,6 +3,7 @@ import fetch from 'cross-fetch'
 export const FETCH_ITEMS_BEGIN = 'FETCH_ITEMS_BEGIN';
 export const FETCH_ITEMS_SUCCES ='FETCH_ITEMS_SUCCESS';
 export const FETCH_ITEMS_FAILURE ='FETCH_ITEMS_FAILURE';
+export const REQUEST_STORE ="REQUEST_STORE";
 
 export function fetchItems() {
   return dispatch => {
@@ -40,3 +41,13 @@ export const fetchItemsFailure = error =>
   type: FETCH_ITEMS_FAILURE,
   payload: { error }
 })
+
+export const requestStore = () => ({
+  type: REQUEST_STORE
+})
+
+export function requestItems() {
+  return dispatch => {
+    dispatch(requestStore());
+  };
+}

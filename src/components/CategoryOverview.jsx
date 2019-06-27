@@ -3,7 +3,7 @@ import "../styles/shopping.css";
 import "../index.css";
 import { connect } from "react-redux";
 import { fetchItems} from '../actions';
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const mapStateToProps = state => {
   console.log(state)
