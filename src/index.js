@@ -3,15 +3,12 @@ import React from 'react';
 import App from './components/App.jsx';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from "redux";
-import rootReducer from './reducers';
-import Root from './components/Root';
 import '../src/actions/requestProducts';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import configureStore from './configureStore.js';
 
-const store = createStore(rootReducer)
-
+const store = configureStore();
 store.subscribe(() => {
   console.log(store.getState())
 });
