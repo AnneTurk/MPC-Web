@@ -1,7 +1,8 @@
 import fetch from 'cross-fetch'
 
-export const REQUEST_ITEMS = 'REQUEST_ITEM';
-export const RECEIVE_ITEMS ='RECEIVE_ITEM';
+export const FETCH_ITEMS_BEGIN = 'FETCH_ITEMS_BEGIN';
+export const FETCH_ITEMS_SUCCES ='FETCH_ITEMS_SUCCESS';
+export const FETCH_ITEMS_FAILURE ='FETCH_ITEMS_FAILURE';
 export const SELECT_ITEM = 'SELECT_ITEM';
 export const SELECT_SUBCATEGORY ='SELECT_SUBCATEGORY';
 export const SELECT_PRODUCT ='SELECT_PRODUCT';
@@ -9,27 +10,42 @@ export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const DELETE_PRODUCT = 'DELETE_PRODUCT';
 export const INCREMENT_MONEY_CART = 'INCREMENT_MONEY_CART';
 
-function fetchItems() {
+export function fetchItems() {
   return dispatch => {
-    dispatch(requestItems());
-    fetch(`https://webmppcapstone.blob.core.windows.net/data/itemsdata.json`)
+    dispatch(fetchItemsBegin());
+    return fetch("https://webmppcapstone.blob.core.windows.net/data/itemsdata.json",
+    {method: 'GET'})
+    .then(handleErrors)
       .then(response => response.json())
-      .then(json => dispatch(receiveItems(json)))
-  }
-};
-export function requestItems(items){
-  return {
-    type: REQUEST_ITEMS,
-    items: items
-  }
-};
+      .then(json => {
+        dispatch(fetchItemsSuccess(json.items));
+        console.log(json)
+      return json.items})
+      .catch(error => dispatch(fetchItemsFailure(error)));
+  };
+}
 
-export function receiveItems(json){
-  return {
-    type: RECEIVE_ITEMS,
-    items:json.children.map(child => child.item)
+function handleErrors(response) {
+  if (!response.ok) {
+    throw Error(response.statusText);
   }
-};
+  return response
+}
+
+export const fetchItemsBegin = () => ({
+  type: FETCH_ITEMS_BEGIN
+  });
+
+export const fetchItemsSuccess = items => ({
+  type: FETCH_ITEMS_SUCCES,
+  payload: { items }
+});
+
+export const fetchItemsFailure = error =>
+({
+  type: FETCH_ITEMS_FAILURE,
+  payload: { error }
+})
 
 export function selectItem(item, id) {
     return {

@@ -6,6 +6,7 @@ import { selectSubcategory } from '../actions/index'
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
+  console.log(state)
   return{
     items: state.items
   }
@@ -13,11 +14,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onSelect: id => {
-      dispatch(selectSubcategory(id));
     }
   };
-};
+
 
 const CategoryOverview = connect(mapStateToProps, mapDispatchToProps)(SubcategoryButton);
 

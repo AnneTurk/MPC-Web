@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux'
 import {
-  REQUEST_ITEMS, 
-  RECEIVE_ITEMS,
+  FETCH_ITEMS_BEGIN,
+  FETCH_ITEMS_SUCCES,
+  FETCH_ITEMS_FAILURE,
   SELECT_ITEM,
   SELECT_SUBCATEGORY,
   ADD_PRODUCT,
@@ -13,8 +14,37 @@ var initialState = {
   items: [],
   subcategories : [],
   products: [],
-  cart:[]
+  cart:[],
+  loading: false,
+  error: null
 }
+
+export function itemReducer1 (state = initialState, action){
+  switch(action.type) {
+    case FETCH_ITEMS_BEGIN:
+      return {
+      ...state,
+      loading: true,
+      error: null
+      };
+    case FETCH_ITEMS_SUCCES:
+      return {
+      ...state,
+      loading: false,
+      items: action.payload.items
+      };
+    case FETCH_ITEMS_FAILURE:
+      return {
+      ...state,
+      loading: false,
+      error: action.payload.error,
+      items: []
+      };
+    default:
+      return state;
+}}
+
+
 
 export const itemReducer = (state = [], action) => {
   switch (action.type) {
@@ -67,10 +97,11 @@ export const totalAmount = (state = 0, action) => {
 };
 
 const rootReducer = combineReducers({
-  itemReducer,
+  itemReducer1,
+  /*itemReducer,
   subcategoryReducer,
   cartReducer,
-  totalAmount
+  totalAmount*/
 })
 
 export default rootReducer
