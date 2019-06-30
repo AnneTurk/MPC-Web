@@ -4,7 +4,7 @@ import "../styles/shopping.css";
 
 class SortBar extends React.Component {
     render(){
-      const CategoryName = "Categorynaam";
+      const CategoryName = "";
         return ( 
             <div className="sortbar"> 
               <h1 id="categoryname-sortbar">{CategoryName}</h1>
