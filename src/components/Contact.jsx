@@ -37,7 +37,7 @@ const Contact = () => {
     return (
         <div className="contact">
         <section className="form col-6">
-            <form name="contactForm" id="contactform"> {/*rubric57 */}
+            <form name="contactForm" className="contactform"> {/*rubric57 */}
             <h1>Contact</h1>
             <br/>
                 <label>Name:</label><br/>

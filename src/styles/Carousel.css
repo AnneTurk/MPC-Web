@@ -66,9 +66,11 @@
 }
 
 .carousel {
-    width: 80vw;
-    height:80vh;
-    background:grey;
+  min-height: 500px;
+  max-height: 600px;
+  min-width: 500px;
+  max-width: 600px;
+  background:orange;
 }
 
 .carouselcaption{
@@ -76,7 +78,7 @@
 }
 
 .carousel-item{
-    height:50%;
+    height:60%;
 }
 .caption, .text{
   color:black;
@@ -84,10 +86,14 @@
 img {
     display: block;
     margin: auto;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    height: 100%;
-    min-height:70vh;
-    width: auto;
-    max-width: 80vw;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    min-height: 300px;
+    max-height: 400px;
+    min-width: 300px;
+    max-width: 400px;
+  }
+.link{
+    color: black;
+    font-size: 1em;
   }

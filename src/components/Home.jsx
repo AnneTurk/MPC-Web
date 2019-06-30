@@ -7,10 +7,14 @@ import "../index.css"
 const Home = () => {
     
     return (
-<div>
- <Welcome />  {/*rubric04 */} 
+<div className="flex-container-row">
+<div className="col-1"></div>
+<div className="flex=contaner-column">
+<Welcome />  {/*rubric04 */} 
  <ProductCarousel />
  <ShopButton /> {/*rubric05 */}
+</div>
+<div className="col-1"></div>
 </div>
     );
   };

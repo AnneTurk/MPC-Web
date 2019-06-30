@@ -12,7 +12,7 @@ input, select, textarea{
     width:40vw;
 }
 
-#contactform{
+.contactform{
     border-style: solid;
     border-color: orange;
     border-width: 3px;

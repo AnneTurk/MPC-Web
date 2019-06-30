@@ -6,16 +6,17 @@ class SortBar extends React.Component {
     render(){
       const CategoryName = "Categorynaam";
         return ( 
-            <div className="flex-container-row">
-              <h1>{CategoryName}</h1>
-              <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                 <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">HTML</a></li>
-                      <li><a href="#">CSS</a></li>
-                      <li><a href="#">JavaScript</a></li>
-                    </ul>
+            <div className="sortbar"> 
+              <h1 id="categoryname-sortbar">{CategoryName}</h1>
+              <div className="col-4"></div>
+              <div id="sortbar-part">
+              <label class="sortby" id="sortby-label">Sort by:&nbsp;</label>
+              <select name="Sort by" size="1" class="sortby" id="select-sortby"> 
+                  <option value="none">None</option>
+                  <option value="price">Price</option>
+                  <option value="alphabetical">Alphabetical</option>
+                  <option value="rating">Rating</option>
+              </select>
               </div>
             </div>
     );

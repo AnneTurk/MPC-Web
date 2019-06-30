@@ -12,7 +12,7 @@
 }
 
 a{
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .shopbody {
@@ -54,4 +54,36 @@ a{
   display:flex;
   float:left;
 
+}
+
+.sortbar{
+  font-size: 40px;
+  top: 0;
+  flex: 1 0 1em;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+#categoryname-sortbar{
+  display: flex;
+  align-content: flex-start;
+}
+#sortbar-part{
+  display:flex;
+  text-align: center;
+}
+.sortby{
+  display:flex;
+  font-size:24px;
+  justify-content: flex-end;
+}
+#sortby-label{
+  height: auto;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  text-align: justify;
+
+}
+#select-sortby{
+ width:auto; 
 }

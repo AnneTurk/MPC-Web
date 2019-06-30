@@ -2,6 +2,19 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel"
 import "../styles/Carousel.css"
 import "../index.css"
+
+var interval = null;
+
+function toggle(){
+  if (document.getElementById("slidetoggle").checked == true) {
+    console.log("checked")
+    interval = 300;
+  }
+  else {
+    console.log("unchecked")
+    interval = null;
+  }
+}
 export class ProductCarousel extends React.Component {
     constructor(props, context) {
       super(props, context);
@@ -23,19 +36,15 @@ export class ProductCarousel extends React.Component {
   
     render() {
       const { index, direction } = this.state;
-      let interval = null;
-      if (document.getElementById("slidetoggle") == true) {
-        interval = 300;
-      }
     return (
 <div>
   {/*rubric06 */}
 <label className="switch">
-  <input type="checkbox" id="slidetoggle"></input>
+  <input type="checkbox" id="slidetoggle" onChange={toggle} ></input>
   <span className="slider round"></span>
   </label>
   <label className="toggletext">Toggle Slide show </label> 
-
+      
       <Carousel
         activeIndex={index}
         direction={direction}
@@ -46,43 +55,38 @@ export class ProductCarousel extends React.Component {
           <img
             className="d-block"
             src="https://webmppcapstone.blob.core.windows.net/fruitsimages/apricot.jpg"
-            alt="First slide"
+            alt="Apricot"
           />
           <Carousel.Caption>
-            <h3 clasName="caption">{this.props.children}</h3>
-            <p className="text">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3 clasName="caption">Apricot</h3>
+            <a className="link" href="http://localhost:8080/#/product?name=apricot">Buy a Apricot</a>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block"
             src="https://webmppcapstone.blob.core.windows.net/fruitsimages/avocado.jpg"
-            alt="Third slide"
+            alt="Avocado"
           />
 
           <Carousel.Caption>
-            <h3 className="caption">Second slide label</h3>
-            <p className="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3 className="caption">Avocado</h3>
+            <a href="http://localhost:8080/#/product?name=avocado">Buy an avocado</a>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block"
             src="https://webmppcapstone.blob.core.windows.net/fruitsimages/banana.jpg"
-            alt="Third slide"
+            alt="Banana"
           />
 
           <Carousel.Caption>
-            <h3 className="caption">Third slide label</h3>
-            <p className="text">
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
+            <h3 className="caption">Banana</h3>
+          <a href="http://localhost:8080/#/product?name=banana">Buy a banana</a>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-    );
-  }
-}
 </div>
     );
   };

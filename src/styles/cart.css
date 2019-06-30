@@ -17,3 +17,20 @@
 #cartsummary{
     text-align: center;
 }
+
+.form{
+    display: flex;
+}
+.shippingform{
+        border-style: solid;
+        border-color: orange;
+        border-width: 3px;
+        border-radius: 5px;
+        padding: 15px;
+}
+input, select, textarea{
+    width:100%;
+}
+#shippingbutton{
+    float:right;
+}
