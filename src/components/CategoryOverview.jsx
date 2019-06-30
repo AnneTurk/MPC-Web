@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { fetchItems} from '../actions';
 import { NavLink } from "react-router-dom";
 
-var url = ""
+var url = "/shopping/category?name=category"
 
 function insertCategory(){
  var category = this.item.catgory;
@@ -41,7 +41,7 @@ class CategoryOverview extends React.Component {
       <div className="flex-container-row col-9">
           {
             this.props.items.map(item => {
-              return <NavLink to={url} className="button" onClick={insertCategory}>{item.category}</NavLink>
+              return <NavLink to={url} className="button">{item.category}</NavLink>
             })
           }
       </div>
