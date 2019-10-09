@@ -59,10 +59,12 @@ class CategoryMenu extends React.Component {
                     button 
                     key={ subOption.name }>
                     <Link 
-                      to={subOption.name}> 
+                      to={subOption.name}
+                      className="subcategorymenulink"> 
                       <ListItemText 
                         inset 
                         primary= { subOption.name }
+                        className="subcategorymenulink"
                       />
                     </Link>
                   </ListItem>
@@ -75,6 +77,7 @@ class CategoryMenu extends React.Component {
                   button 
                   onClick={ () => this.handleClick( subOption.category ) }>
                   <ListItemText
+                  className="categorymenulink"
                     inset 
                     primary={ subOption.category } />
                 </ListItem>

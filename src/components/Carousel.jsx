@@ -71,7 +71,7 @@ export class ProductCarousel extends React.Component {
 
           <Carousel.Caption>
             <h3 className="caption">Avocado</h3>
-            <a href="http://localhost:8080/#/product?name=avocado">Buy an avocado</a>
+            <a className="link" href="http://localhost:8080/#/product?name=avocado">Buy an avocado</a>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -83,7 +83,7 @@ export class ProductCarousel extends React.Component {
 
           <Carousel.Caption>
             <h3 className="caption">Banana</h3>
-          <a href="http://localhost:8080/#/product?name=banana">Buy a banana</a>
+          <a className="link" href="http://localhost:8080/#/product?name=banana">Buy a banana</a>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

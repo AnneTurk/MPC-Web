@@ -6,6 +6,7 @@ import { requestItems } from '../actions';
 import CategoryMenu from "./CategoryMenu";
 import SortBar from './SortBar';
 
+
 const mapStateToProps = state => {
   console.log(state)
   return{

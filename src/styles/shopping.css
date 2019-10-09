@@ -5,14 +5,14 @@
     text-align: center;
     text-decoration: none;
     display: flex;
-    font-size: 3rem;
+    font-size: 2rem;
     margin: 4% 2%;
     float:"left";
     width: 33%;
 }
 
 a{
-    font-size: 2em;
+    font-size: 0.8em;
 }
 
 .shopbody {
@@ -45,8 +45,19 @@ a{
   flex-direction: column;
 }
 
+.categorymenulink {
+  color: orange;
+  padding-top: 0px;
+}
+
+.subcategorymenulink {
+  color: black;
+  height: 100%;
+}
+
 .menuHeader {
-  padding-left: 30px;
+  padding-left: 56px;
+  padding-top: 20px;
 }
 
 .overview {
