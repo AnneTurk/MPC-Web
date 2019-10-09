@@ -34,7 +34,7 @@ class CategoryOverview extends React.Component {
       <div className="flex-container-row col-9">
           {
             this.props.items.map(item => {
-              return <NavLink to={"/shopping/"+item.category} className="button">{item.category}</NavLink>
+              return <NavLink to={`/category/${item.category}`} className="button">{item.category}</NavLink>
             })
           }
       </div>

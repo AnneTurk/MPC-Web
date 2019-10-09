@@ -7,7 +7,7 @@ import Drawer from '@material-ui/core/Drawer'
 import { Link } from 'react-router-dom'
 import '../styles/shopping.css'
 
-var subcategoryUrl = "/shopping/"; 
+var subcategoryUrl = "/subcategory/"; 
 
 class CategorySideMenu extends React.Component {
     constructor(props) {

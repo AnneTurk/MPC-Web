@@ -37,13 +37,9 @@ export class SubCategoryOverview extends React.Component {
             })
           }
           <div className="flex-container-row">
-            <div>
-              <CategorySideMenu /> 
-          </div>
-          <div className="flex-container-column">
+          <div className="flex-container-column col-12">
             <SortBar />
             </div>
-
           </div>
       </div>
     )
