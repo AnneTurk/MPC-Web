@@ -3,7 +3,7 @@ import "../styles/shopping.css";
 import "../index.css";
 import { connect } from "react-redux";
 import { requestItems } from '../actions';
-import CategoryMenu from "./CategoryMenu";
+import CategorySideMenu from "./CategorySideMenu";
 import SortBar from './SortBar';
 
 
@@ -27,7 +27,7 @@ export class CategoryPage extends React.Component {
 
   render() {
     if (!this.props.items) {
-      return <span>Items are loading...</span>
+      return <span>Items are loading... for Category</span>
     }
     return (
       <div className="flex-container-row">
@@ -38,7 +38,7 @@ export class CategoryPage extends React.Component {
           }
           <div className="flex-container-row">
             <div>
-              <CategoryMenu /> 
+              <CategorySideMenu /> 
           </div>
           <div className="flex-container-column">
             <SortBar />

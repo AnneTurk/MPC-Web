@@ -7,15 +7,19 @@ import Drawer from '@material-ui/core/Drawer'
 import { Link } from 'react-router-dom'
 import '../styles/shopping.css'
 
-class CategoryMenu extends React.Component {
+var subcategoryUrl = "/shopping/"; 
+
+class CategorySideMenu extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
         error: null,
         isLoaded: false,
         categories: [],
+        isOpen: {}
       };
     }
+
 
     componentDidMount() {
       fetch("https://webmppcapstone.blob.core.windows.net/data/itemsdata.json",{
@@ -40,18 +44,16 @@ class CategoryMenu extends React.Component {
         )
         }
         handleClick( categories ) {
-          console.log(categories)
-          this.setState( prevState => ( 
-            { [ categories ]: !prevState[ categories ],
-            selectedCategory: categories } 
-          ) )
-          console.log(this.state)
+          let selectedCategory = categories;
+          console.log(selectedCategory);
+          this.setState( { isOpen: { [categories]: !this.state.isOpen[ categories ] }}          )
+
         };
         
-        handler( subcategories ) {
-          const { state } = this
-
+        handler( subcategories) {
+          const { state } = this;         
           return subcategories.map( ( subOption ) => {
+            console.log(subOption);
             if ( !subOption.subcategories ) {
               return (
                 <div key={ subOption.name }>
@@ -59,7 +61,7 @@ class CategoryMenu extends React.Component {
                     button 
                     key={ subOption.name }>
                     <Link 
-                      to={subOption.name}
+                      to={`${subcategoryUrl}${Object.keys(state.isOpen)[0]}/${subOption.name}`}
                       className="subcategorymenulink"> 
                       <ListItemText 
                         inset 
@@ -82,11 +84,11 @@ class CategoryMenu extends React.Component {
                     primary={ subOption.category } />
                 </ListItem>
                 <Collapse
-                  in={ state[ subOption.category ] } 
+                  in={ state.isOpen[ subOption.category ] } 
                   timeout="auto" 
                   unmountOnExit
                 >
-                { this.handler( subOption.subcategories ) }
+                { this.handler( subOption.subcategories) }
                 </Collapse>
               </div>
             )
@@ -94,6 +96,7 @@ class CategoryMenu extends React.Component {
         }
 
     render() {
+      console.log(this.state)
       const { error, isLoaded, categories} = this.state;
       if (error) {
         return <div>Error: {error.message}</div>;
@@ -130,4 +133,4 @@ class CategoryMenu extends React.Component {
   }
 
   
-export default (CategoryMenu);
+export default (CategorySideMenu);

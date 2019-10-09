@@ -30,8 +30,8 @@ const App = () => {
       <Switch>
       <Route exact path="/" component={Home}/> {/*-rubric13 + -rubric76 + -rubric69 */}
       <Route exact path="/shopping" component={Shopping} />{/*-rubric34 + -rubric70*/}
-      <Route path="/shopping/:category" component={CategoryPage} />
       <Route path="/shopping/:category/:subcategory" component={SubCategoryOverview} />
+      <Route path="/shopping/:category" component={CategoryPage} />
       <Route path="/product" component={Product} />{/*-rubric46*/}
       <Route path="/cart" component={Cart} /> {/*-rubric56 + -rubric71*/}
       <Route path="/contact" component={Contact} />{/*-rubric62 + -rubric78 */}
