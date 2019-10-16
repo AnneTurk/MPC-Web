@@ -32,7 +32,7 @@ const App = () => {
       <Route exact path="/shopping" component={Shopping} />{/*-rubric34 + -rubric70*/}
       <Route path="/subcategory/:category/:subcategory" component={SubCategoryOverview} />
       <Route path="/category/:category" component={CategoryPage} />
-      <Route path="/product" component={Product} />{/*-rubric46*/}
+      <Route path="/product/:product" component={Product} />{/*-rubric46*/}
       <Route path="/cart" component={Cart} /> {/*-rubric56 + -rubric71*/}
       <Route path="/contact" component={Contact} />{/*-rubric62 + -rubric78 */}
       <Route path="/about" component={About} /> {/*-rubric64 = -rubric77*/}
