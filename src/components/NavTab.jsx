@@ -8,7 +8,7 @@ const NavTab = props => {
 console.log(props)
   return (
     <NavLink to={props.to} className={props.class}>
-    <FontAwesomeIcon icon={props.icon}/> {props.label}
+    <FontAwesomeIcon icon={props.icon}/> <h2>{props.label}</h2>
     </NavLink>
   );
 };
